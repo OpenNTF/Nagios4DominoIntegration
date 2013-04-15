@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: NAGIOS Statistic Servlet
+Bundle-SymbolicName: biz.webgate.dominoext.nagios;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: biz.webgate.dominoext.nagios.Activator
+Bundle-Vendor: WebGate Consulting AG
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.equinox.http.registry,
+ com.ibm.domino.osgi.core,
+ com.ibm.pvc.servlet,
+ com.ibm.designer.runtime,
+ com.ibm.domino.napi
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Import-Package: lotus.domino
