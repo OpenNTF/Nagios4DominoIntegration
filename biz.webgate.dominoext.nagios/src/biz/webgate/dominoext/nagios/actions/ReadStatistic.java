@@ -45,9 +45,9 @@ public class ReadStatistic implements IServletAction {
 				List<StatisticEntry> lstRC = StatisticParser.getInstance()
 						.getEntriesFromXML(strResult);
 				if (lstRC != null) {
-					nCount++;
 					for (StatisticEntry entry : lstRC) {
 						StatisticService.getInstance().addEntry(entry);
+						nCount++;
 					}
 				}
 			}

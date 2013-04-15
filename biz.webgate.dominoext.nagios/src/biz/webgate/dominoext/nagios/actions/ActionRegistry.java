@@ -43,6 +43,9 @@ public class ActionRegistry {
 		if (m_Actions == null) {
 			initActions();
 		}
+		if (strAction == null || "".equals(strAction)) {
+			strAction = "default";
+		}
 		isaRC = m_Actions.get(strAction.toLowerCase());
 		if (isaRC == null) {
 			isaRC = m_Actions.get("default");

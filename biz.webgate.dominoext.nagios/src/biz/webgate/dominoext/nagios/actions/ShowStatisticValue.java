@@ -34,7 +34,12 @@ public class ShowStatisticValue implements IServletAction {
 		String strRC = "";
 		try {
 			String strNagiosDB = sesServer.getEnvironmentString("nagiosdb");
-			String strStats = (String) params.get("stats");
+			String[] arrStats = (String[]) params.get("stats");
+			String strStats = "";
+			if (arrStats == null) {
+				throw new NagiosException("Missing stats parameter");
+			}
+			strStats = arrStats[0];
 			if (strStats == null || "".equals(strStats)) {
 				throw new NagiosException("Missing stats parameter");
 			}
@@ -72,7 +77,8 @@ public class ShowStatisticValue implements IServletAction {
 					+ se.getClearText() + " STATUS -> " + se.getStatusInfo()
 					+ "\n";
 		} catch (Exception e) {
-			throw new NagiosException("Error during ShowStatisticValue.buildValues()",e);
+			throw new NagiosException(
+					"Error during ShowStatisticValue.buildValues()", e);
 		}
 		return strRC;
 	}

@@ -70,7 +70,7 @@ public class ShowAllStatistic implements IServletAction {
 		} catch (Exception e) {
 			throw new NagiosException("Error during ShowAllStatistic.buildValues()",e);
 		}
-		return null;
+		return sbResult.toString();
 	}
 
 }
