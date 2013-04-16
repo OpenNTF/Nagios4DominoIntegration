@@ -35,10 +35,15 @@ public class ShowStatisticValue implements IServletAction {
 		String strRC = "";
 		try {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			String strNagiosDB = sesServer.getEnvironmentString("nagiosdb");
 =======
 			String strNagiosDB = NotesIniFactory.getNagiosDB();
 >>>>>>> Vereinfachte NAGIOS abfrage
+=======
+
+			String strNagiosDB = NotesIniFactory.getNagiosDB();
+>>>>>>> Debugging
 			String[] arrStats = (String[]) params.get("stats");
 			String strStats = "";
 			if (arrStats == null) {

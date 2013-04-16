@@ -43,7 +43,9 @@ public class ReadStatistic implements IServletAction {
 						sesServer.getServerName(), "show stat " + strStatistic
 								+ " -xml");
 				List<StatisticEntry> lstRC = StatisticParser.getInstance()
-						.getEntriesFromXML(strResult);
+						.getEntriesFromXML(strResult,
+								sesServer.getInternational().getDecimalSep(),
+								sesServer.getInternational().getThousandsSep());
 				if (lstRC != null) {
 					for (StatisticEntry entry : lstRC) {
 						StatisticService.getInstance().addEntry(entry);

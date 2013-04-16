@@ -45,7 +45,7 @@ public class StatisticParser {
 		return m_Parser;
 	}
 
-	public List<StatisticEntry> getEntriesFromXML(String strXML) {
+	public List<StatisticEntry> getEntriesFromXML(String strXML, String strDecSep, String strTousendSep) {
 		List<StatisticEntry> lstRC = new ArrayList<StatisticEntry>();
 
 		try {
@@ -79,6 +79,7 @@ public class StatisticParser {
 							statEntry.setValue(new Double(Double.parseDouble(strValue)));
 						} catch (Exception e) {
 							e.printStackTrace();
+							System.out.println("FAILED -> "+ strValue);
 						}
 					}
 					if ("1".equals(strType)) {
@@ -95,12 +96,14 @@ public class StatisticParser {
 					}
 					if ("3".equals(strType)) {
 						statEntry.setType(StatisticEntry.TYPE_DOUBLE);
+						String strOrigValue = strValue;
 						try {
-							strValue = strValue.replace(".","");
-							strValue = strValue.replace(",", ".");
+							strValue = strValue.replace(strTousendSep,"");
+							strValue = strValue.replace(strDecSep, ".");
 							statEntry.setValue(Double.parseDouble(strValue));
 						} catch (Exception e) {
 							e.printStackTrace();
+							System.out.println(strOrigValue + " -> "+ strValue);
 						}
 					}
 					lstRC.add(statEntry);
