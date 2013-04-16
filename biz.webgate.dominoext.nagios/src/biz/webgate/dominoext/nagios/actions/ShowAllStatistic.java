@@ -23,6 +23,7 @@ import lotus.domino.DateTime;
 import lotus.domino.Session;
 import biz.webgate.dominoext.nagios.IServletAction;
 import biz.webgate.dominoext.nagios.NagiosException;
+import biz.webgate.dominoext.nagios.NotesIniFactory;
 import biz.webgate.dominoext.nagios.statistic.StatisticEntry;
 import biz.webgate.dominoext.nagios.statistic.StatisticService;
 import biz.webgate.dominoext.nagios.threshold.ValueService;
@@ -34,7 +35,7 @@ public class ShowAllStatistic implements IServletAction {
 			throws NagiosException {
 		StringBuilder sbResult = new StringBuilder();
 		try {
-			String strNagiosDB = sesServer.getEnvironmentString("nagiosdb");
+			String strNagiosDB = NotesIniFactory.getNagiosDB();
 			DateTime dtCurrent = sesServer.createDateTime(new Date());
 			dtCurrent.adjustMinute(-5);
 			Date dt5Min = dtCurrent.toJavaDate();

@@ -51,7 +51,7 @@ public class Servlet extends HttpServlet {
 			sesServer = NotesFactory.createSession();
 			String strResult = "";
 			if (isAccessAllowed(req.getRemoteAddr(),
-					sesServer.getEnvironmentString("nagioscaller", true))) {
+					NotesIniFactory.getNagiosCaller())) {
 
 				strResult = ActionRegistry.getInstance()
 						.getServletAction(strAction)
@@ -60,6 +60,7 @@ public class Servlet extends HttpServlet {
 				strResult = "Access form " + req.getRemoteAddr()
 						+ " no allowed!";
 			}
+			resp.setContentType("text/plain");
 			PrintWriter pwCurrent = resp.getWriter();
 			pwCurrent.append(strResult);
 			pwCurrent.close();

@@ -22,6 +22,7 @@ import lotus.domino.DateTime;
 import lotus.domino.Session;
 import biz.webgate.dominoext.nagios.IServletAction;
 import biz.webgate.dominoext.nagios.NagiosException;
+import biz.webgate.dominoext.nagios.NotesIniFactory;
 import biz.webgate.dominoext.nagios.statistic.StatisticEntry;
 import biz.webgate.dominoext.nagios.statistic.StatisticService;
 import biz.webgate.dominoext.nagios.threshold.ValueService;
@@ -33,7 +34,11 @@ public class ShowStatisticValue implements IServletAction {
 			throws NagiosException {
 		String strRC = "";
 		try {
+<<<<<<< HEAD
 			String strNagiosDB = sesServer.getEnvironmentString("nagiosdb");
+=======
+			String strNagiosDB = NotesIniFactory.getNagiosDB();
+>>>>>>> Vereinfachte NAGIOS abfrage
 			String[] arrStats = (String[]) params.get("stats");
 			String strStats = "";
 			if (arrStats == null) {
@@ -73,9 +78,7 @@ public class ShowStatisticValue implements IServletAction {
 				throw new NagiosException("No statistic value for " + strStats);
 			}
 			ValueService.getInstance().updateStatsEntry(se);
-			strRC = se.getKey() + ": " + se.getValue() + ": "
-					+ se.getClearText() + " STATUS -> " + se.getStatusInfo()
-					+ "\n";
+			strRC = se.getNAGIOSResponse();
 		} catch (Exception e) {
 			throw new NagiosException(
 					"Error during ShowStatisticValue.buildValues()", e);

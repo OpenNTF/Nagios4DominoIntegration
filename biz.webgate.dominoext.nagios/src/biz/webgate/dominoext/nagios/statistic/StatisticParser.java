@@ -76,7 +76,7 @@ public class StatisticParser {
 					if ("0".equals(strType)) {
 						statEntry.setType(StatisticEntry.TYPE_DOUBLE);
 						try {
-							statEntry.setValue(Double.parseDouble(strValue));
+							statEntry.setValue(new Double(Double.parseDouble(strValue)));
 						} catch (Exception e) {
 							e.printStackTrace();
 						}

@@ -20,6 +20,7 @@ import java.util.Map;
 import lotus.domino.Session;
 import biz.webgate.dominoext.nagios.IServletAction;
 import biz.webgate.dominoext.nagios.NagiosException;
+import biz.webgate.dominoext.nagios.NotesIniFactory;
 
 public class DefaultResponse implements IServletAction {
 
@@ -36,6 +37,12 @@ public class DefaultResponse implements IServletAction {
 		for (String strAction : ActionRegistry.getInstance().getActions()) {
 			sbCurrent.append(" - " + strAction+"\n");
 		}
+		sbCurrent.append("\n");
+		sbCurrent.append("NOTES.INI Setup\n");
+		sbCurrent.append(" - Nagioscaller = "+NotesIniFactory.getNagiosCaller()+"\n");
+		sbCurrent.append(" - Nagiosdb     = "+NotesIniFactory.getNagiosDB()+"\n");
+		sbCurrent.append(" - DEBUG_NAGIOS = "+NotesIniFactory.getNagiosDebug()+"\n");
+		
 		return sbCurrent.toString();
 	}
 

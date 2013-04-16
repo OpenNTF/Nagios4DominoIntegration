@@ -22,12 +22,12 @@ public class StatisticEntry implements Serializable {
 	public static final int TYPE_DOUBLE = 0;
 	public static final int TYPE_STRING = 1;
 	public static final int TYPE_DATE = 2;
-	
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private String m_Key;
 	private Object m_Value;
 	private int m_Type;
@@ -35,52 +35,120 @@ public class StatisticEntry implements Serializable {
 	private double m_WarningLevel = Double.NEGATIVE_INFINITY;
 	private double m_CriticalLevel = Double.NEGATIVE_INFINITY;
 	private boolean isBigger;
-	
+
 	public String getKey() {
 		return m_Key;
 	}
+
 	public void setKey(String key) {
 		m_Key = key;
 	}
+
 	public Object getValue() {
 		return m_Value;
 	}
+
 	public void setValue(Object value) {
 		m_Value = value;
 	}
+
 	public int getType() {
 		return m_Type;
 	}
+
 	public void setType(int type) {
 		m_Type = type;
 	}
+
 	public String getClearText() {
+		if (m_ClearText == null) {
+			return m_Key;
+		}
 		return m_ClearText;
 	}
+
 	public void setClearText(String clearText) {
 		m_ClearText = clearText;
 	}
+
 	public double getWarningLevel() {
 		return m_WarningLevel;
 	}
+
 	public void setWarningLevel(double warningLevel) {
 		m_WarningLevel = warningLevel;
 	}
+
 	public double getCriticalLevel() {
 		return m_CriticalLevel;
 	}
+
 	public void setCriticalLevel(double criticalLevel) {
 		m_CriticalLevel = criticalLevel;
 	}
+
 	public boolean isBigger() {
 		return isBigger;
 	}
+
 	public void setBigger(boolean isBigger) {
 		this.isBigger = isBigger;
 	}
-	
+
+	public int getStatus() {
+		if (m_Type == StatisticEntry.TYPE_DOUBLE) {
+			if (!Double.isInfinite(m_CriticalLevel)) {
+				if (isBigger) {
+					if (getDoubleValue() > m_CriticalLevel) {
+						return 2;
+					}
+				} else {
+					if (getDoubleValue() < m_CriticalLevel) {
+						return 2;
+					}
+
+				}
+			}
+			if (!Double.isInfinite(m_WarningLevel)) {
+				if (isBigger) {
+					if (getDoubleValue() > m_WarningLevel) {
+						return 1;
+					}
+				} else {
+					if (getDoubleValue() < m_WarningLevel) {
+						return 1;
+					}
+
+				}
+			}
+
+		}
+		return 0;
+		
+	}
 	public String getStatusInfo() {
-		return "";
+		switch (getStatus()) {
+		case 0:
+			return "OK";
+		case 1:
+			return "WARNING";
+		case 2:
+			return "CRITICAL";
+		}
+		return "UNKNOWN";
 	}
 
+	public double getDoubleValue() {
+		if (m_Type == StatisticEntry.TYPE_DOUBLE) {
+			return ((Double) m_Value).doubleValue();
+		}
+		return Double.NEGATIVE_INFINITY;
+	}
+	
+	public String getNAGIOSResponse() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(getStatusInfo() +" "+getClearText() +" "+ m_Value +"\n");
+		sb.append(""+getStatus());
+		return sb.toString();
+	}
 }

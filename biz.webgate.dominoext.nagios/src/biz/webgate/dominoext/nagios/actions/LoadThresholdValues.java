@@ -20,6 +20,7 @@ import java.util.Map;
 import lotus.domino.Session;
 import biz.webgate.dominoext.nagios.IServletAction;
 import biz.webgate.dominoext.nagios.NagiosException;
+import biz.webgate.dominoext.nagios.NotesIniFactory;
 import biz.webgate.dominoext.nagios.threshold.ValueService;
 
 public class LoadThresholdValues implements IServletAction {
@@ -27,7 +28,7 @@ public class LoadThresholdValues implements IServletAction {
 	@Override
 	public String buildResponse(Map<?, ?> params, Session sesCurrent) throws NagiosException{
 		try {
-			String strNagiosDB = sesCurrent.getEnvironmentString("nagiosdb");
+			String strNagiosDB = NotesIniFactory.getNagiosDB();
 			if (strNagiosDB == null || "".equals(strNagiosDB)) {
 				throw new NagiosException("notes.ini value nagiosdb is not set!");
 			}
