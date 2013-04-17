@@ -34,20 +34,7 @@ public class ShowStatisticValue implements IServletAction {
 			throws NagiosException {
 		String strRC = "";
 		try {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-			String strNagiosDB = sesServer.getEnvironmentString("nagiosdb");
-=======
 			String strNagiosDB = NotesIniFactory.getNagiosDB();
->>>>>>> Vereinfachte NAGIOS abfrage
-=======
-
-			String strNagiosDB = NotesIniFactory.getNagiosDB();
->>>>>>> Debugging
-=======
-			String strNagiosDB = NotesIniFactory.getNagiosDB();
->>>>>>> NagiosFormat geändert
 			String[] arrStats = (String[]) params.get("stats");
 			String strStats = "";
 			if (arrStats == null) {
