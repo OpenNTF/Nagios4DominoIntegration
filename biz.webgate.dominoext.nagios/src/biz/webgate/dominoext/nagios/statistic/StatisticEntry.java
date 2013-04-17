@@ -16,6 +16,7 @@
 package biz.webgate.dominoext.nagios.statistic;
 
 import java.io.Serializable;
+import java.text.NumberFormat;
 
 public class StatisticEntry implements Serializable {
 
@@ -124,8 +125,9 @@ public class StatisticEntry implements Serializable {
 
 		}
 		return 0;
-		
+
 	}
+
 	public String getStatusInfo() {
 		switch (getStatus()) {
 		case 0:
@@ -144,11 +146,17 @@ public class StatisticEntry implements Serializable {
 		}
 		return Double.NEGATIVE_INFINITY;
 	}
-	
+
 	public String getNAGIOSResponse() {
+		NumberFormat nfCurrent = NumberFormat.getNumberInstance();
 		StringBuilder sb = new StringBuilder();
-		sb.append(getStatusInfo() +" "+getClearText() +" "+ m_Value +"\n");
-		sb.append(""+getStatus());
+		if (m_Type == StatisticEntry.TYPE_DOUBLE) {
+			sb.append(nfCurrent.format(((Double) m_Value).doubleValue()) + "\n");
+		} else {
+			sb.append(m_Value + "\n");
+		}
+		sb.append("" + getStatus() + "\n");
+		sb.append(getStatusInfo() + " " + getClearText() + "\n");
 		return sb.toString();
 	}
 }
