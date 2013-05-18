@@ -63,9 +63,9 @@ public class ValueService {
 				Value val = new Value();
 				val.setAlias(docProcess.getItemValueString("AliasT"));
 				val.setKey(docProcess.getItemValueString("SearchStrT"));
-				val.setBigger("1".equals(docProcess.getItemValueString(" gkT")));
+				val.setBigger("1".equals(docProcess.getItemValueString("gkT")));
 				val.setCritical(docProcess.getItemValueDouble("CriticalT"));
-				val.setWarning(docProcess.getItemValueDouble(" WarningT"));
+				val.setWarning(docProcess.getItemValueDouble("WarningT"));
 				m_Values.put(val.getKey(), val);
 				docProcess.recycle();
 				nCount++;
