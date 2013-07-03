@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C1257B9D0027DC0F" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="28a" sequence="7" unid="90FA5A8E529AF380C1257B38004CC6EE">
+<created><datetime>20130324T145836,62+01</datetime></created>
+<modified><datetime dst="true">20130703T091524,27+02</datetime></modified>
+<revised><datetime>20130324T145841,82+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130703T091524,27+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130703T091524,27+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>biz/webgate/mywebgate/api/dataSourceNamePicker/NamePickerPeople.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>biz/webgate/mywebgate/api/dataSourceNamePicker/NamePickerPeople.java</text></item>
+
+
+
+
+</note>

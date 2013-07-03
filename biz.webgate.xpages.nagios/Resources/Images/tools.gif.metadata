@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C1257B9D0027DC0F" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="186" sequence="3" unid="ADCCA65E7FC20C03C1257B38004CC625">
+<created><datetime>20130324T145834,61+01</datetime></created>
+<modified><datetime dst="true">20130703T091522,97+02</datetime></modified>
+<revised><datetime>20130324T145835,18+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130703T091522,97+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130703T091522,97+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name="$TITLE"><text>tools.gif</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$LANGUAGE" sign="true"><text>en</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$WebBrowserCompatible" sign="true"><number>1</number></item>
+<item name="$ImagesWide" sign="true"><number>8</number></item>
+<item name="DEBUG_SIG" sign="true"><text>1</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20060905T143753,13-04</datetime></item>
+<item name="$Flags"><text>34CiQv</text></item>
+<item name="$ImageNames" sign="true"><text>outl_tools.gif</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+
+
+
+
+
+
+
+</note>

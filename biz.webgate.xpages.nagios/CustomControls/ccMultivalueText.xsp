@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.afterPageLoad><![CDATA[#{javascript:var scopeKey = "textArrayValue"+compositeData.textArrayId;
+
+
+values = ccBean.getValue(compositeData.textArrayObject,compositeData.textArrayFieldName);
+
+viewScope.put(scopeKey,values);
+
+var valueBinding = facesContext.getApplication().createValueBinding( "#{viewScope." + scopeKey + "}");
+
+var field = getComponent("djltbValues" + compositeData.textArrayId);
+
+if(field != null){
+	field.setValueBinding("value", valueBinding);
+}
+
+viewScope.put(scopeKey,values);
+
+ccBean.addCustomControl(compositeData.textArrayId,compositeData.textArrayObject,compositeData.textArrayObjectAlias,compositeData.textArrayFieldName)
+
+}]]></xp:this.afterPageLoad>
+
+	
+
+
+	
+
+	<xp:panel>
+		<xp:this.id><![CDATA[${javascript:"pnlTextArray" + compositeData.textArrayId}]]></xp:this.id>
+		<xp:inputText id="itTextArray"></xp:inputText>
+		<xp:link escape="true" text="Hinzufügen" id="lnkAddIT">
+
+		<xp:eventHandler event="onclick" submit="true"
+			refreshMode="partial" execMode="partial">
+
+
+			<xp:this.action><![CDATA[#{javascript:
+var value = getComponent("itTextArray").getValue();
+
+var scopeKey = "textArrayValue"+compositeData.textArrayId;
+
+if (value.trim() == "") {
+	return;
+}
+
+var tmpTextArray = viewScope.get(scopeKey);
+
+
+//var scopeKeyAdd = "addTextArray"+compositeData.textArrayId;
+//viewScope.put(scopeKeyAdd,true);
+//print(scopeKeyAdd + " set to " + viewScope.get(scopeKeyAdd));
+
+if(tmpTextArray instanceof java.util.ArrayList) {
+	var vecCurrent:java.util.ArrayList = tmpTextArray;
+	vecCurrent.add(value);
+}else if (tmpTextArray instanceof java.util.Vector) {
+	var vecCurrent:java.util.Vector = tmpTextArray;
+	vecCurrent.addElement(value);
+} else {
+	if (tmpTextArray == "" || tmpTextArray == null) {
+		viewScope.put(scopeKey,value); 
+	} else {
+		var vecCurrent:java.util.Vector = new java.util.Vector();
+		vecCurrent.addElement(tmpTextArray);
+		vecCurrent.addElement(value);
+		viewScope.put(scopeKey,vecCurrent);
+	}
+}
+
+getComponent("itTextArray").setValue("");
+
+//viewScope.put(scopeKeyAdd,false);
+//XSP.partalRefreshGet("#{id:pnlTextArray"+ compositeData.textArrayId +"}");
+}]]></xp:this.action>
+			<xp:this.execId><![CDATA[#{javascript:"pnlTextArray"+ compositeData.textArrayId }]]></xp:this.execId>
+			<xp:this.refreshId><![CDATA[#{javascript:"pnlTextArray"+ compositeData.textArrayId }]]></xp:this.refreshId>
+		</xp:eventHandler></xp:link>
+		<xp:br></xp:br>
+		<xe:djextListTextBox multipleSeparator=","
+			multipleTrim="true">
+
+
+			<xe:this.id><![CDATA[${javascript:"djltbValues" + compositeData.textArrayId}]]></xe:this.id>
+
+
+		</xe:djextListTextBox>
+
+	</xp:panel>
+	<xp:span rendered="false" style="color:rgb(255,0,0)">call&#160;ccBean.updateMulitValueData(&lt;textArrayObject&gt;, &lt;textArrayObjectAlias&gt;) to ensure that the data are in sync with the Object. (e.g. in the save button)&#160;</xp:span><xp:span rendered="false" style="color:rgb(255,0,0)"></xp:span><xp:span rendered="false" style="color:rgb(255,0,0)"></xp:span><xp:span rendered="false" style="color:rgb(255,0,0)"></xp:span><xp:span style="font-weight:bold"></xp:span></xp:view>
+

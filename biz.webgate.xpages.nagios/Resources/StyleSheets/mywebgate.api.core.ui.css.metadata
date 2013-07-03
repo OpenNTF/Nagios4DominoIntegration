@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C1257B9D0027DC0F" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="166" sequence="3" unid="6D91ABCB052F77BCC1257B38004CC615">
+<created><datetime>20130324T145834,45+01</datetime></created>
+<modified><datetime dst="true">20130703T091522,81+02</datetime></modified>
+<revised><datetime>20130324T145834,70+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130703T091522,81+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130703T091522,81+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name="$MimeType" sign="true"><text>text/css</text></item>
+<item name="$Flags"><text>34C=Q</text></item>
+<item name="$MimeCharSet" sign="true"><text>UTF-8</text></item>
+<item name="$TITLE" sign="true"><text>mywebgate.api.core.ui.css</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>mywebgate.api.core.ui.css</text></item></note>

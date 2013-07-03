@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+
+
+	<xp:this.resources>
+		<xp:script src="/testBox.js" clientSide="true"></xp:script>
+	</xp:this.resources>
+	<xp:button value="refresh" id="btnRefreshTopCompanies"
+		styleClass="lotusBtn">
+		<xp:eventHandler event="onclick" immediate="true" submit="true"
+			refreshMode="complete">
+			<xp:this.script><![CDATA[displayWait()]]></xp:this.script>
+		</xp:eventHandler>
+		
+		</xp:button>
+</xp:view>

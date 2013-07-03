@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C1257B9D0027DC0F" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="216" sequence="5" unid="FC1CC3E3DFF36BA9C1257B38004CC6AA">
+<created><datetime>20130324T145835,94+01</datetime></created>
+<modified><datetime dst="true">20130703T091523,69+02</datetime></modified>
+<revised><datetime>20130324T145840,62+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130703T091523,69+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130703T091523,69+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>biz/webgate/xpages/dss/binding/util/NamesProcessor.java</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>biz/webgate/xpages/dss/binding/util/NamesProcessor.java</text></item>
+
+
+</note>

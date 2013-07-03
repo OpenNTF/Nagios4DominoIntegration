@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom" pageIcon="wgc.ico" pageTitle="myWebGate API Sample">
+
+	<xc:ccApplication navigationPath="/home" title="Home">
+		<xp:this.facets>
+			<xp:panel xp:key="facetRight">
+				<xp:panel
+					style="padding-left:10.0px;padding-right:10.0px">
+
+
+					<xp:panel disableTheme="true"
+						styleClass="mwg-person">
+						<xp:text escape="false" disableTheme="true">
+							<xp:this.value><![CDATA[#{javascript:var you = context.getUser().getCommonName();
+var pb = peopleBean.get(you.toLowerCase());
+if (pb) {
+	html='<img width="32px" height="32px" src="'+pb.themeAvatarURL+'" />&#160;';
+	html+='<a href="'+pb.profileURL+'" target="_blank">'+@Name("[CN]",you)+'</a>';
+}
+return html;}]]></xp:this.value>
+						</xp:text>
+					</xp:panel>
+
+
+					<xp:br></xp:br>
+
+					Manager:
+					<xp:panel disableTheme="true"
+						styleClass="mwg-person">
+						<xp:text escape="false" disableTheme="true">
+							<xp:this.value><![CDATA[#{javascript:var you = context.getUser().getCommonName();
+var pb = peopleBean.get(you.toLowerCase());
+var mgr = pb.manager;
+if (mgr) {
+	var pbmgr = peopleBean.get(mgr.toLowerCase());
+	if (pbmgr) {
+		html='<img width="32px" height="32px" src="'+pbmgr.themeAvatarURL+'" />&#160;';
+		html+='<a href="'+pbmgr.profileURL+'" target="_blank">'+@Name("[CN]",mgr)+'</a>';
+	}
+} else {
+	html = "No manager found for " + you;
+}
+return html;}]]></xp:this.value>
+						</xp:text>
+					</xp:panel>
+
+				</xp:panel>
+			</xp:panel>
+			<xp:panel xp:key="facetLeft">
+				<xc:ccMyWebGateConfig></xc:ccMyWebGateConfig>
+			</xp:panel>
+			<xp:panel xp:key="facetMiddle">
+				<xp:button value="Clear Cache" id="button1">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:peopleBean.clearCache()}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xe:dumpObject id="dumpObject1" value="#{userBean}"></xe:dumpObject>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:ccApplication>
+</xp:view>

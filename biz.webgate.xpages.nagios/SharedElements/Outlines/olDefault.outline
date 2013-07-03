@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257B9D0027DC0F'>
+<noteinfo noteid='162' unid='77341E98C2B30485C1257B38004CC614' sequence='2'>
+<created><datetime>20130324T145834,44+01</datetime></created>
+<modified><datetime dst='true'>20130703T091522,79+02</datetime></modified>
+<revised><datetime>20130324T145834,64+01</datetime></revised>
+<lastaccessed><datetime dst='true'>20130703T091522,79+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130703T091522,79+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name='$PublicAccess' sign='true'><text>1</text></item>
+<item name='$SiteMapList' sign='true'>
+<rawitemdata type='1a'>
+AQYBAAEAAwBIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAADAEgANwBACQIAaAAAAAAAAAAJAAAAAAAAAC4AAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFUGVvcGxlAAEA9v8rAAAAAAADABMA
+CQAAAAAAAAAAAAAAAAAAAAAAAAAAAHZpZXdzLmdpZj9IAGIAAQgCAGsAAAAAAAEACgAAACoAAAAu
+AAAAAAAAAAAAAAAAAAMAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABUJ5IE5hbWUA
+AQD2/ygACAAAAAMAAgAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAUGVvcGxlAQD2/ysAAAAAAAMAEwAJ
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAdmlld3MuZ2lmP0gAcwABCAIAcgAAAAAAAQAXAAAALgAAAC4A
+AAAAAAAAAAAAAAAAAwACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFQnkgTmFtZSB3
+aXRoIHN1YmRvY3MAAQD2/ysAAAAAAAMAAgAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAUGVvcGxlU3Vi
+PwEA9v8rAAAAAAADABMACQAAAAAAAAAAAAAAAAAAAAAAAAAAAHZpZXdzLmdpZj8=
+</rawitemdata></item>
+<item name='$TITLE'><text>olDefault</text></item>
+<item name='$Flags'><text>m</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item></note>
+

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' replicaid='C1257B9D0027DC0F'>
+<noteinfo noteid='1d6' unid='C1FD7ABD1A6C093BC1257B38004CC651' sequence='2'>
+<created><datetime>20130324T145835,05+01</datetime></created>
+<modified><datetime dst='true'>20130703T091523,37+02</datetime></modified>
+<revised><datetime>20130324T145836,36+01</datetime></revised>
+<lastaccessed><datetime dst='true'>20130703T091523,37+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20130703T091523,37+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name='OriginalModTime' sign='true'><datetime>20080109T144304,89+01</datetime></item>
+<item name='$HTMLCode' sign='true'>
+<rawitemdata type='1'>
+X/8QAAIADwAHAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$Info' sign='true'>
+<rawitemdata type='1'>
+hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
+</rawitemdata></item>
+<item name='$WindowTitle' sign='true'><formula>@DbTitle</formula></item>
+<item name='$HTMLHeadTag' sign='true'><formula>"&lt;meta http-equiv=\"refresh\" content=\"0; url=/" +@WebDbName  +"/home.xsp\"&gt;&lt;META HTTP-EQUIV=\"PRAGMA\" content=\"NO-CACHE\"&gt;" +
+"&lt;style&gt;a { text-decoration: none; color: #222222; } body { background-color: #F4F5F6; }&lt;/style&gt;
+&lt;meta name=\"description\" content=\""+@DbTitle+"\" /&gt;"</formula></item>
+<item name='$Flags'><text>C34WQ</text></item>
+<item name='$Fonts'>
+<rawitemdata type='1'>
+i/8oAAEABSZWZXJkYW5hAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$$ScriptName' summary='false' sign='true'><text>pgWebStart</text></item>
+<item name='$Body' sign='true'>
+<rawitemdata type='1'>
+gQKC/1oAAQAAAAAAAAAAAKAFAACgBQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAABAAAAAJSHAAAAAAAAAAAAAAAAAQAAAAQAAACDBAEAhf8IAAUAAAjdBgAArf+p/14A
+AQAYAAQAUgBSAAoABAAAADwAAQALAFs8YSBocmVmPSIvAPsAMAEiAgEAGQAvaG9tZS54c3AiPkxv
+YWRpbmcuLjwvYT5dACICAwAHABAACQAJMVMyUzNTMkUAhf8IAAEAAAqqAt4GAACuAIX/CAABAgAK
+</rawitemdata></item>
+<item name='$TITLE' sign='true'><text>pgWebStart</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item></note>
+

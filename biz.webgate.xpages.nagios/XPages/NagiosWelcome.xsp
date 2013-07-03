@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xp:this.resources>
+		<xp:script src="/testBox.js" clientSide="true"></xp:script>
+	</xp:this.resources>
+	<xc:ccApplication>
+		<xp:this.facets>
+			<xp:panel xp:key="facetMiddle">
+
+				<xp:label value="Welcome to Nagios" id="label1"
+					style="font-size:16pt">
+				</xp:label>
+				<xp:br></xp:br>
+				<xp:br></xp:br>
+				<xp:button id="bnLoadData"
+					value="Go to the control Page">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action><![CDATA[#{javascript:context.redirectToPage("NagiosSettings", true)}]]></xp:this.action>
+						<xp:this.script><![CDATA[displayWait();
+setTimeout(200);]]></xp:this.script>
+					</xp:eventHandler>
+				</xp:button>
+			</xp:panel>
+		</xp:this.facets>
+	</xc:ccApplication>
+</xp:view>

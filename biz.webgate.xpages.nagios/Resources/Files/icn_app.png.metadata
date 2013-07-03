@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C1257B9D0027DC0F" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1d2" sequence="3" unid="B2EC596967200C51C1257B38004CC64C">
+<created><datetime>20130324T145835,00+01</datetime></created>
+<modified><datetime dst="true">20130703T091523,35+02</datetime></modified>
+<revised><datetime>20130324T145836,32+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130703T091523,35+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130703T091523,35+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Christian Guedemann/O=WGC/C=CH</name></wassignedby>
+<item name="$TITLE"><text>icn_app.png</text></item>
+<item name="$Flags"><text>345CgQ</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20120418T205938,10+02</datetime></item>
+<item name="$Comment" sign="true"><text>from famfamfam.com</text></item>
+<item name="$PublicAccess"><text>1</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>icn_app.png</text></item></note>

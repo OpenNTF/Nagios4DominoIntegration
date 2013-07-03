@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" replicaid="C1257B9D0027DC0F" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="2ca" sequence="820" unid="2C7B373D8ACB4EC0C1257B4B004246D9">
+<created><datetime dst="true">20130412T140355,13+02</datetime></created>
+<modified><datetime dst="true">20130703T091524,59+02</datetime></modified>
+<revised><datetime dst="true">20130502T223415,08+02</datetime></revised>
+<lastaccessed><datetime dst="true">20130703T091524,59+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130703T091524,59+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Philipp Pfister/O=WGC/C=CH</name></updatedby>
+<wassignedby><name>CN=Philipp Pfister/O=WGC/C=CH</name></wassignedby>
+<item name="$TITLE"><text>NagiosSettings.xsp</text></item>
+<item name="$Flags"><text>gC~4K</text></item>
+
+
+
+<item name="$DesignerVersion"><text>8.5.1</text></item>
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>NagiosSettings.xsp</text></item></note>
