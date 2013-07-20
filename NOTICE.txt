@@ -1,9 +1,9 @@
 OpenNTF Nagios4DominoIntegration
-http://poi4xpages.openntf.org
-© Copyright WebGate Consulting AG
+http://www.openntf.org
+ï¿½ Copyright WebGate Consulting AG
 
 This product includes software contributed to 
-OpenNTF Alliance – (http://www.OpenNTF.org/)
+OpenNTF Alliance ï¿½ (http://www.OpenNTF.org/)
 
 
 List of third party software used in this project:
