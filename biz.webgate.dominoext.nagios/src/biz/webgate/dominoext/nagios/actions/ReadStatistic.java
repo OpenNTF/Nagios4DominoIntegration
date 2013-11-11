@@ -40,7 +40,7 @@ public class ReadStatistic implements IServletAction {
 			String strResult;
 			for (String strStatistic : m_lstPackages) {
 				strResult = sesServer.sendConsoleCommand(
-						sesServer.getServerName(), "show stat " + strStatistic
+						sesServer.getServerName(), "!show stat " + strStatistic
 								+ " -xml");
 				List<StatisticEntry> lstRC = StatisticParser.getInstance()
 						.getEntriesFromXML(strResult,
