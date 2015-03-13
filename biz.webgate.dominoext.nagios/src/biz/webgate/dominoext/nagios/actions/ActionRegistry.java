@@ -59,6 +59,7 @@ public class ActionRegistry {
 		m_Actions.put("readstats", new ReadStatistic());
 		m_Actions.put("showall", new ShowAllStatistic());
 		m_Actions.put("nagios", new ShowStatisticValue());
+		m_Actions.put("database", new ShowStatisticValueFromDatabase());
 		m_Actions.put("default", new DefaultResponse());
 	}
 

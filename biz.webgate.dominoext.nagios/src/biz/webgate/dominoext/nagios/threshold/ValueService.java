@@ -17,9 +17,7 @@ package biz.webgate.dominoext.nagios.threshold;
 
 import java.util.Date;
 import java.util.HashMap;
-
 import biz.webgate.dominoext.nagios.statistic.StatisticEntry;
-
 import lotus.domino.Database;
 import lotus.domino.Document;
 import lotus.domino.Session;
@@ -61,12 +59,24 @@ public class ValueService {
 				Document docProcess = docNext;
 				docNext = viwLUP.getNextDocument(docNext);
 				Value val = new Value();
-				val.setAlias(docProcess.getItemValueString("AliasT"));
-				val.setKey(docProcess.getItemValueString("SearchStrT"));
-				val.setBigger("1".equals(docProcess.getItemValueString("gkT")));
-				val.setCritical(docProcess.getItemValueDouble("CriticalT"));
-				val.setWarning(docProcess.getItemValueDouble("WarningT"));
-				m_Values.put(val.getKey(), val);
+				if(docProcess.getItemValueString("DataSourceT").equals("Domino Database")) {
+					val.setAlias(docProcess.getItemValueString("AliasT"));
+					val.setKey(docProcess.getItemValueString("IDT"));
+					val.setBigger("1".equals(docProcess.getItemValueString("gkT")));
+					val.setCritical(docProcess.getItemValueDouble("CriticalT"));
+					val.setWarning(docProcess.getItemValueDouble("WarningT"));
+					val.setSourceDatabase(docProcess.getItemValueString("sourceDatabaseT"));
+					val.setSourceView(docProcess.getItemValueString("sourceViewT"));
+					val.setSourceDocumentByKey(docProcess.getItemValueString("sourceDocumentByKeyT"));
+					val.setCustomCheck(docProcess.getItemValueString("customCheckT"));
+				}else {
+					val.setAlias(docProcess.getItemValueString("AliasT"));
+					val.setKey(docProcess.getItemValueString("SearchStrT"));
+					val.setBigger("1".equals(docProcess.getItemValueString("gkT")));
+					val.setCritical(docProcess.getItemValueDouble("CriticalT"));
+					val.setWarning(docProcess.getItemValueDouble("WarningT"));					
+				}
+					m_Values.put(val.getKey(), val);
 				docProcess.recycle();
 				nCount++;
 			}
@@ -98,5 +108,17 @@ public class ValueService {
 			statEntry.setWarningLevel(val.getWarning());
 		}
 	}
-	
+
+	public void updateDatabaseEntry(StatisticEntry statEntry) {
+		Value val = getValue(statEntry.getKey());
+		if (val != null) {
+			statEntry.setBigger(val.isBigger());
+			statEntry.setCriticalLevel(val.getCritical());
+			statEntry.setWarningLevel(val.getWarning());
+			statEntry.setSourceDatabase(val.getSourceDatabase());
+			statEntry.setSourceView(val.getSourceView());
+			statEntry.setCheckValueField(val.getCustomCheck());
+			statEntry.setDocumentSearchKey(val.getSourceDocumentByKey());
+		}
+	}
 }

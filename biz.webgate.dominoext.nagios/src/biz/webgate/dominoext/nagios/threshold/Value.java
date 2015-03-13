@@ -23,11 +23,17 @@ public class Value implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private String m_ID;
 	private String m_Key;
 	private String m_Alias;
 	private double m_Warning;
 	private double m_Critical;
 	private boolean m_isBigger;
+	private String m_SourceDatabase;
+	private String m_SourceView;
+	private String m_SourceDocumentByKey;
+	private String m_CustomCheck;
+	
 	public String getKey() {
 		return m_Key;
 	}
@@ -58,4 +64,35 @@ public class Value implements Serializable{
 	public void setBigger(boolean isBigger) {
 		m_isBigger = isBigger;
 	}
+	public String getID() {
+		return m_ID;
+	}
+	public void setID(String iD) {
+		m_ID = iD;
+	}
+	public String getSourceDatabase() {
+		return m_SourceDatabase;
+	}
+	public void setSourceDatabase(String sourceDatabase) {
+		m_SourceDatabase = sourceDatabase;
+	}
+	public String getSourceView() {
+		return m_SourceView;
+	}
+	public void setSourceView(String sourceView) {
+		m_SourceView = sourceView;
+	}
+	public String getSourceDocumentByKey() {
+		return m_SourceDocumentByKey;
+	}
+	public void setSourceDocumentByKey(String sourceDocumentByKey) {
+		m_SourceDocumentByKey = sourceDocumentByKey;
+	}
+	public String getCustomCheck() {
+		return m_CustomCheck;
+	}
+	public void setCustomCheck(String customCheck) {
+		m_CustomCheck = customCheck;
+	}
+	
 }

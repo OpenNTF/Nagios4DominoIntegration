@@ -43,7 +43,7 @@ public class ShowStatisticValue implements IServletAction {
 			strStats = arrStats[0];
 			if (strStats == null || "".equals(strStats)) {
 				throw new NagiosException("Missing stats parameter");
-			}
+			}			
 			DateTime dtCurrent = sesServer.createDateTime(new Date());
 			dtCurrent.adjustMinute(-5);
 			Date dt5Min = dtCurrent.toJavaDate();
