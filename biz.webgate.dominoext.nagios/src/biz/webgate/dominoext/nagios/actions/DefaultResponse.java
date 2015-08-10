@@ -33,7 +33,7 @@ public class DefaultResponse implements IServletAction {
 		sbCurrent
 				.append("=========================================================\n");
 		sbCurrent
-				.append("nagios.stats needs a action parameter with one of the following value:");
+				.append("nagios.stats needs a action parameter with one of the following value:\n");
 		for (String strAction : ActionRegistry.getInstance().getActions()) {
 			sbCurrent.append(" - " + strAction+"\n");
 		}

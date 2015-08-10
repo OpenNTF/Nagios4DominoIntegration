@@ -24,9 +24,9 @@ public class ReadDatabaseDocument {
 			se.setItemType(document.getFirstItem(se.getCheckValueField()).getType());
 			se.setDocumentCreated(document.getCreated());
 
+			document.recycle();
 			view.recycle();
 			database.recycle();
-			sesServer.recycle();
 		} catch (NotesException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
