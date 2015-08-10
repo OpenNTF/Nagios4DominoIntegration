@@ -40,13 +40,17 @@ public class ActionRegistry {
 
 	public IServletAction getServletAction(String strAction) {
 		IServletAction isaRC = null;
+		
 		if (m_Actions == null) {
 			initActions();
 		}
+		
 		if (strAction == null || "".equals(strAction)) {
 			strAction = "default";
 		}
+		
 		isaRC = m_Actions.get(strAction.toLowerCase());
+		
 		if (isaRC == null) {
 			isaRC = m_Actions.get("default");
 		}
@@ -60,6 +64,7 @@ public class ActionRegistry {
 		m_Actions.put("showall", new ShowAllStatistic());
 		m_Actions.put("nagios", new ShowStatisticValue());
 		m_Actions.put("database", new ShowStatisticValueFromDatabase());
+		m_Actions.put("diskwrite", new CheckDiskWrite());
 		m_Actions.put("default", new DefaultResponse());
 	}
 

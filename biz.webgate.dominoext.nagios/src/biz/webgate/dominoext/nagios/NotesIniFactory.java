@@ -48,5 +48,13 @@ public class NotesIniFactory {
 		return null;
 	}
 
+	public static String getDataDirectory () {
+		try {
+			return ContextInfo.getEnvironmentString("Directory");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 }
