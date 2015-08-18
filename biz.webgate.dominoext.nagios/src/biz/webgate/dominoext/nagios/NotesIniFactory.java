@@ -57,4 +57,20 @@ public class NotesIniFactory {
 		return null;
 	}
 
+	public static String getDefaultDB () {
+		try {
+			return ContextInfo.getEnvironmentString("nagios_default_db");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static String getDefaultView () {
+		try {
+			return ContextInfo.getEnvironmentString("nagios_default_view");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

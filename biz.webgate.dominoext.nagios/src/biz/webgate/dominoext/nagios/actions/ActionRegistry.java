@@ -66,6 +66,7 @@ public class ActionRegistry {
 		m_Actions.put("database", new ShowStatisticValueFromDatabase());
 		m_Actions.put("diskwrite", new CheckDiskWrite());
 		m_Actions.put("default", new DefaultResponse());
+		m_Actions.put("pluginonly", new ShowStatisticValuePluginOnly());
 	}
 
 	public List<String> getActions() {

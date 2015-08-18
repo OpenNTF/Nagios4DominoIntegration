@@ -42,6 +42,7 @@ public class DefaultResponse implements IServletAction {
 		sbCurrent.append(" - Nagioscaller = "+NotesIniFactory.getNagiosCaller()+"\n");
 		sbCurrent.append(" - Nagiosdb     = "+NotesIniFactory.getNagiosDB()+"\n");
 		sbCurrent.append(" - DEBUG_NAGIOS = "+NotesIniFactory.getNagiosDebug()+"\n");
+		sbCurrent.append("<img src='" + request.getContextPath() + "/resources/test.png' alt='image' />")
 		
 		return sbCurrent.toString();
 	}
