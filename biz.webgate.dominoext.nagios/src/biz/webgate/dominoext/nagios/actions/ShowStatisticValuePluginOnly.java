@@ -14,27 +14,49 @@ public class ShowStatisticValuePluginOnly implements IServletAction{
 	@Override
 	public String buildResponse(Map<?, ?> params, Session sesCurrent)
 			throws NagiosException {
-		String result;
-		RequestStatistic requestStatistic = new RequestStatistic().setParameter(params);
+		String result="";
+		String getValueOnly="";
+		ResultStatistic resultStatistic;
 		
-		System.out.println("DB= "+requestStatistic.getDB());
-		System.out.println("View= "+requestStatistic.getView());
-		System.out.println("Doc= "+requestStatistic.getDoc());
-		System.out.println("Field= "+requestStatistic.getField());
-		System.out.println("Warning= "+requestStatistic.getWarning());
-		System.out.println("Critical= "+requestStatistic.getCritical());
-		System.out.println("Operator= "+requestStatistic.getIsBigger());
-		System.out.println("Percent= "+requestStatistic.getPercent());
-		System.out.println("Additional Field= "+requestStatistic.getAdditionalField());
-		System.out.println("Status= "+requestStatistic.getStatus());
+		if (params.get("vo") != null & params.get("vo") != "") {
+			String[] arrValue = (String[]) params.get("vo");
+			getValueOnly = (arrValue[0]);
+		}
+		System.out.println("Value only " +getValueOnly);
+		if(getValueOnly.equals("true")) {
+			RequestStatistic requestStatistic = new RequestStatistic().setParameterGetOnly(params);
+			if (requestStatistic.getStatus() == null | requestStatistic.getStatus() == "") {
+				resultStatistic = (ResultStatistic) ReadDatabaseDocumentPluginOnly.getNotesDocValue(requestStatistic, sesCurrent);
+			}else{
+				result = requestStatistic.getStatus();
+				return result;
+			}
+			result = resultStatistic.getNAgiosResponseSingleValue();
 
-		ResultStatistic resultStatistic = (ResultStatistic) ReadDatabaseDocumentPluginOnly.getNotesDocument(requestStatistic, sesCurrent);
-				
-		resultStatistic.calculateResult(requestStatistic);
+			return result;
+		}else{
+			RequestStatistic requestStatistic = new RequestStatistic().setParameter(params);
 		
-		result = resultStatistic.getNAGIOSResponse(requestStatistic.getPercent());
-		
-		return result;
-	}
+			if (requestStatistic.getStatus() == null | requestStatistic.getStatus() == "") {
+				resultStatistic = (ResultStatistic) ReadDatabaseDocumentPluginOnly.getNotesDocument(requestStatistic, sesCurrent);
+			}else{
+				result = requestStatistic.getStatus();
+				return result;
+			}
+			
+			if (resultStatistic.getErrorMessage() != null & resultStatistic.getErrorMessage() != "") {
+				return resultStatistic.getNAGIOSErrorMessage();
+			}
+			
+			if (resultStatistic.getStatus() == null | resultStatistic.getStatus() == "") {
+				resultStatistic.calculateResult(requestStatistic);
+			}else{
+				return resultStatistic.getStatus();
+			}
+			
+			result = resultStatistic.getNAGIOSResponse(requestStatistic.getPercent());
+			return result;
+			}
+		}
 
 }

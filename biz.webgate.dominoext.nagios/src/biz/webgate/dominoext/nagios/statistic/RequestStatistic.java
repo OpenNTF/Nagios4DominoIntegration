@@ -24,6 +24,39 @@ public class RequestStatistic implements Serializable{
 	private Boolean m_IsBigger;
 	private String m_Status;
 	
+
+	public RequestStatistic setParameterGetOnly(Map<?, ?> params) {
+		if (params.get("db") == null | params.get("db") == "") {
+			m_DB=NotesIniFactory.getDefaultDB();
+		}else {
+			String[] arrDB = (String[]) params.get("db");
+			m_DB=(arrDB[0]);
+		}
+		
+		if (params.get("view") == null | params.get("view") == "") {
+			m_View=NotesIniFactory.getDefaultView();
+		}else {
+			String[] arrView = (String[]) params.get("view");
+			m_View=(arrView[0]);
+		}
+		
+		if (params.get("doc") == null | params.get("doc") == "") {
+			m_Status=("Doc "+ STATUS);
+		}else {
+			String[] arrDoc = (String[]) params.get("doc");
+			m_Doc=(arrDoc[0]);
+		}
+		
+		if (params.get("field") == null | params.get("field") == "") {
+			m_Status=("field "+ STATUS);
+		}else {
+			String[] arrField = (String[]) params.get("field");
+			m_Field=(arrField[0]);
+		}
+		return this;		
+	}
+	
+	
 	public RequestStatistic setParameter(Map<?, ?> params) {
 		if (params.get("db") == null | params.get("db") == "") {
 			m_DB=NotesIniFactory.getDefaultDB();
