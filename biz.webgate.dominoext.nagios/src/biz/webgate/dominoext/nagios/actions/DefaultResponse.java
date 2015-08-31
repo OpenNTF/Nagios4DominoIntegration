@@ -54,7 +54,7 @@ public class DefaultResponse implements IServletAction {
 		sbCurrent.append(" - Result in Percent: p=true (optional)\n");
 		sbCurrent.append(" - Additional Field: addfield=fieldname (required if p=true)\n");
 		sbCurrent.append(" - Field value only: vo=true (To get the Value from a Field) \n");
-		sbCurrent.append(" - Supported Field only types are: text, numbers, DateTime \n");
+		sbCurrent.append(" - Supported Field types are: text, numbers, DateTime \n");
 		sbCurrent.append("\n");
 		sbCurrent.append(">>>>> Example Default Result >> ..../nagios.stats?action=pluginonly&doc=CN=Server1/O=ACME&field=Disk./.Free&w=200000000000&c=2000000000&op=gr \n");
 		sbCurrent.append(">>>>> Example Percent Result >> ..../nagios.stats?action=pluginonly&doc=CN=Server1/O=ACME&field=Disk./.Free&w=10&c=20&op=gr&p=true&addField=Disk./.Size\n");
